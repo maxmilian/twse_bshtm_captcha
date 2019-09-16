@@ -1,0 +1,6 @@
+requests >= 2.20.0
+beautifulsoup4 >= 4.8.0
+opencv-python >= 4.1.0.25
+numpy >= 1.16.4
+keras >= 2.2.5
+h5py >= 1.10.0
