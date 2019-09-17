@@ -1,5 +1,12 @@
+__pycache__
+
 # Jupyter Notebook
 .ipynb_checkpoints
 
 .DS_Store
+auto-train.csv
 processed/*.jpg
+model/*.hdf5
+logs/events*
+captcha.jpg
+preprocessing.jpg
