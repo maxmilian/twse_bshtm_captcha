@@ -8,3 +8,8 @@
 ```sh
 pip3 install -r requirements.txt
 ```
+
+```
+# utilties
+jupyter nbconvert --to script utilities.ipynb
+```
