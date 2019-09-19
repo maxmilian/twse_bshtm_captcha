@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+# In[1]:
 
 
 import os, random, cv2
@@ -12,7 +12,7 @@ CAPTCHA_FOLDER = "captcha/"
 PROCESSED_FOLDER = "processed/"
 
 
-# In[ ]:
+# In[2]:
 
 
 def preprocessing(from_filename, to_filename):
@@ -32,12 +32,12 @@ def preprocessing(from_filename, to_filename):
     return
 
 
-# In[ ]:
+# In[3]:
 
 
-i = 0
+i = 5000
 
-#ignore existing image
+# #ignore existing image
 while True:
     i += 1
     filename = PROCESSED_FOLDER + str(i) + '.jpg'
@@ -47,7 +47,7 @@ while True:
 
 print("start to process image from index: " + str(i))
 
-while i < 1900:
+while True:
     i += 1
     filename = str(i) + ".jpg"
     if not os.path.isfile(CAPTCHA_FOLDER + filename):
