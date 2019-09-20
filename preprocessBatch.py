@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[ ]:
 
 
 import os, random, cv2
@@ -11,8 +11,14 @@ import numpy as np
 CAPTCHA_FOLDER = "captcha/"
 PROCESSED_FOLDER = "processed/"
 
+WIDTH = 200
+HEIGHT = 60
+CROP_LEFT = 10
+CROP_TOP = 10
+CROP_BOTTON = 10
 
-# In[2]:
+
+# In[ ]:
 
 
 def preprocessing(from_filename, to_filename):
@@ -27,15 +33,17 @@ def preprocessing(from_filename, to_filename):
     
     edged = cv2.Canny(burred, 30, 150)
     dilation = cv2.dilate(edged, kernel, iterations=1) 
+    
+    crop_img = dilation[CROP_TOP:HEIGHT - CROP_BOTTON, CROP_LEFT:WIDTH]
 
-    cv2.imwrite(to_filename, dilation)
+    cv2.imwrite(to_filename, crop_img)
     return
 
 
-# In[3]:
+# In[ ]:
 
 
-i = 5000
+i = 0
 
 # #ignore existing image
 while True:
@@ -47,7 +55,7 @@ while True:
 
 print("start to process image from index: " + str(i))
 
-while True:
+while i < 10000:
     i += 1
     filename = str(i) + ".jpg"
     if not os.path.isfile(CAPTCHA_FOLDER + filename):
